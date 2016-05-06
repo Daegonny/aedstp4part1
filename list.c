@@ -1,22 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "list.h"
+#include "soldier.h"
 
-struct LIST *createList(){
-	struct LIST* list;
-	list = (struct LIST*) malloc(sizeof(struct LIST));
-	(*list).prox = NULL;
-	(*list).first = NULL; 	
-	(*list).last = NULL;
+struct SOLDIER *createList(){
+	struct SOLDIER* list;
+	list = (struct SOLDIER*) malloc(sizeof(struct SOLDIER));
+	(*list).next = list;
+	return list;
 }
 
-struct LIST* createList();
+struct SOLDIER* createList();
 
 //imprima lista na tela
-void printList(struct LIST *list);
+void printList(struct SOLDIER *list){
+	struct SOLDIER *aux = (*list).next;
+	while(aux != list){
+		printSoldier(aux);
+		aux = (*aux).next;
+	}
+}
 
-int isEmptyList(struct LIST *list);
+int isEmptyList(struct SOLDIER *list){
+	return list == (*list).next;
+}
 
-void addToList(struct SOLDIER* soldier, struct LIST *list);
+void addToList(struct SOLDIER *soldier, struct SOLDIER *list){
+	struct SOLDIER *aux = (*list).next;
+	while(aux != list){
+		aux = (*aux).next;
+	}
+	(*soldier).next = (*aux).next;
+	(*aux).next = soldier;
+}
 
-void removeFromList(struct SOLDIER* soldier, struct LIST *list);
+void removeFromList(struct SOLDIER *soldier, struct SOLDIER *list);

@@ -17,6 +17,6 @@ struct SOLDIER *createSoldier(int number){
     return soldier;
 }
 
-void printSoldier(struct SOLDIER* soldier){
+void printSoldier(struct SOLDIER *soldier){
     printf("Soldado: %d\n", (*soldier).number);
 }
