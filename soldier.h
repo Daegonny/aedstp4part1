@@ -11,7 +11,7 @@ typedef struct SOLDIER //estrutura soldado
 struct SOLDIER *createSoldier(int number);
 
 //imprime um soldado na tela
-void printSoldier(struct Soldier soldier);
+void printSoldier(struct SOLDIER* soldier);
 
 
 #endif

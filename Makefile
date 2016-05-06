@@ -1,6 +1,6 @@
 CC = gcc
 FLAGS = -Wall -g
-FONTES = main.c
+FONTES = soldier.c main.c
 OBJETOS = $(FONTES: .c = .o)
 
 objetos : $(FONTES)
