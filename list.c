@@ -54,11 +54,18 @@ void fillList(int n, struct SOLDIER *list){
 
 struct SOLDIER* removeFromList(int n, struct SOLDIER *soldier){
 	struct SOLDIER *aux = soldier;
-	int i;
-	for(i = 1; i < (n-1); i++){
-		aux = (*aux).next;
-		if(isSentinel(aux))//pular sentinela ao percorrer
+	if(n != 1){
+		int i;
+		for(i = 1; i < (n-1); i++){
 			aux = (*aux).next;
+			if(isSentinel(aux))//pular sentinela ao percorrer
+				aux = (*aux).next;
+		}
+	}
+	else{
+		while((*aux).next != soldier){
+			aux = (*aux).next;
+		}
 	}
 
 	struct SOLDIER *it = (*aux).next;

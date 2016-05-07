@@ -23,7 +23,7 @@ int main(int argc, char const *argv[]) {
     int raffledNumber = randomNumber(5);
     //soldado sorteado
     struct SOLDIER *raffledSoldier = getSoldierFromList(N ,list);
-    printf("Numero sorteado: %d\nSoldado Sorteado: %d\n\n", raffledNumber, (*raffledSoldier).number);
+    printf("Soldado sorteado: %d\nNumero Sorteado: %d\n\n", (*raffledSoldier).number, raffledNumber);
 
     play(raffledNumber, raffledSoldier, list);
     return 0;
